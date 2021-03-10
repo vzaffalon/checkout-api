@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
     belongs_to :category
+    has_many :order_items
 
     def self.filter_by_params(params)
         scoped = self.where(nil)
