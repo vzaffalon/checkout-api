@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
     def index
-        @items = Item.all
+        @items = Item.filter_by_params(params).all
         if @items
           render json: @items
         else
