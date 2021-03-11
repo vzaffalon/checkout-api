@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
     end
 
     def create
-        @order = Project.new(order_params)
+        @order = Order.new(order_params)
         if @order.save
           render json: @order
         else
