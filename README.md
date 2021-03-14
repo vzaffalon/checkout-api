@@ -3,6 +3,8 @@
 ### Description
 Api to show a restaurant menu with a list of items to select from a list of categories and to create a order inserting credit card data.
 
+All items images ids are hosted on s3.
+
 ### Executing the project:
 
 Build the container images
@@ -33,6 +35,11 @@ $ docker-compose run web rake db:migrate
 Migrate database for test env
 ```
 $ docker-compose run web rake db:migrate RAILS_ENV=test
+```
+
+Execute database migration
+```
+$ docker-compose run web rake db:seed
 ```
 
 Executing tests
