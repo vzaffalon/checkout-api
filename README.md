@@ -1,7 +1,7 @@
 # checkout-api
 
 ### Description
-Api to show a restaurant list of products, to select products from the menu, and to create a order inserting credit card data.
+Api to show a restaurant menu with a list of items to select from a list of categories and to create a order inserting credit card data.
 
 ### Executing the project:
 
@@ -125,8 +125,6 @@ Success return example:
 #### Route: /categories
 
 Método: Get
-
-Parâmetros:
 
 Success return example:
 
