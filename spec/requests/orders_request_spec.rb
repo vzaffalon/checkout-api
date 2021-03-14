@@ -8,7 +8,9 @@ RSpec.describe "Orders", type: :request do
     describe ".create_order" do
         context "when sending valid data" do
 
+
             before do
+                Rails.application.load_seed
                 params = {
                     "payment": {
                         "card_number": "4002 4002 4002 4003",
@@ -29,8 +31,6 @@ RSpec.describe "Orders", type: :request do
                     ]
                 }
                 post "/orders", params: params 
-                $stderr.puts "hue"
-                $stderr.puts response.body
                 @created_order = JSON.parse(response.body)
             end
 
@@ -43,7 +43,7 @@ RSpec.describe "Orders", type: :request do
             end
 
             it 'created order_items' do
-                expect(@created_order['order_items'][0]['quantity']).not_to eq(2)
+                expect(@created_order['order_items'][0]['quantity']).to eq(2)
             end
         end
     end

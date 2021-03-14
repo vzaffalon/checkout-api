@@ -1,10 +1,11 @@
 FactoryBot.define do
     factory :order do
         association :payment, factory: :payment
-        association :order_items, factory: :order_items
+        association :order_items, factory: :order_item
+        id { 1 }
     end
 
-    factory :order_items do
+    factory :order_item do
         quantity { 2 }
         order_id { 1 }
     end
